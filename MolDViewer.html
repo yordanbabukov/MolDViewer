@@ -1,0 +1,81 @@
+﻿<!--
+	Copyright (C) <2015>  <Yordan Kamenov Babukov>
+	This program is free software: you can redistribute it and/or modify
+    it under the terms of the GNU General Public License as published by
+    the Free Software Foundation, either version 3 of the License, or
+    (at your option) any later version.
+
+    This program is distributed in the hope that it will be useful,
+    but WITHOUT ANY WARRANTY; without even the implied warranty of
+    MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
+    GNU General Public License for more details.
+
+    You should have received a copy of the GNU General Public License
+    along with this program.  If not, see <http://www.gnu.org/licenses/>.
+-->
+
+
+<!DOCTYPE html>
+
+<!-- id=head is need to i can add dynamically new variables (i should think of a workaround - too slow?)-->
+<head id="head">
+	<meta charset="utf-8"/>
+	<title>Custom configuration</title>
+	<link rel="stylesheet" href="webgl-styling.css">
+	
+	<script src="webgl-fmi-user-custom-config-page.js"></script>
+	
+	<p id="paragraph_for_union_information"></p>
+	
+	<!-- slider selector -->
+	<input type = "text" id="number_of_sliders"> </input>
+	
+	<!-- number of constants selector --> 
+	<p id="paragraph_for_name_constants"></p>
+	<input type = "text" id="number_of_constants"> </input>
+	
+	<!-- color selector -->
+	<input type = "text" id="color_selection"> </input>
+	
+	<!-- name selector >-->
+	<input type = "text" id="name_of_complex"> </input>
+	
+	<p id="paragraph_for_equation"></p>
+	<input type = "text" id="equation_formulee"> </input>
+	
+	<!-- vertex shader -->
+	<script id="vshader" type="x-shader/x-vertex">
+		attribute vec3 aXYZ;
+		attribute vec3 aRGB;
+		varying vec3 vRGB;
+
+		void main ()
+		{
+			gl_Position = vec4(aXYZ.x/3.0,aXYZ.y/2.0,aXYZ.z,1);
+			vRGB = aRGB;
+		}
+	</script>
+	<!-- fragment shader -->
+	<script id="fshader" type="x-shader/x-fragment">
+		precision mediump float;
+		varying vec3 vRGB;
+		void main( )
+		{
+			gl_FragColor = vec4(vRGB,1);
+		}
+	</script>
+	
+<head>
+
+<!-- sets default value and red colors to checkboxes of user choice -->
+<body onload="preparation()">
+	<noscript>
+		Искаме JavaScript, но няма!
+	</noscript>
+	
+	<!-- num of sliders, buttons, names of complexes -->
+	<br id="br_span_sliders"><span id="sliders"></span></br>
+	<br id="br_span_buttons"><span id="buttons"></span></br>
+	<p id="name_complex"></p> 
+
+</body>

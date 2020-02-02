@@ -1,0 +1,216 @@
+﻿/*
+	Copyright (C) <2015>  <Yordan Kamenov Babukov>
+	This program is free software: you can redistribute it and/or modify
+    it under the terms of the GNU General Public License as published by
+    the Free Software Foundation, either version 3 of the License, or
+    (at your option) any later version.
+
+    This program is distributed in the hope that it will be useful,
+    but WITHOUT ANY WARRANTY; without even the implied warranty of
+    MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
+    GNU General Public License for more details.
+
+    You should have received a copy of the GNU General Public License
+    along with this program.  If not, see <http://www.gnu.org/licenses/>.
+*/
+
+
+
+
+/* to look the same on different browsers */
+body, font, canvas, div, input, select, option, span  {
+	padding: 0px;
+	margin: 0px:
+}
+
+/* background color */
+body {
+	/* for screen recording use #000 (black) for better contrast */
+	background-color: #e5e5f2;
+}
+
+/* shadow for displayed names */
+font {
+	text-shadow: -1px -1px 0 #000, 0px -1px 0 #000, 1px -1px 0 #000, -1px 1px 0 #000, 0px 1px 0 #000, 1px 1px 0 #000;
+}
+
+/* main canvas for 2d/3d webgl */
+#picasso {
+	border: solid; 
+	/* с проценти също става размазано
+	width: 1000px;
+	height: 400px;
+	*/
+}
+
+/* grouping properties of x and y values */
+.x-and-y-axis-values {
+	border: none; 
+	position: relative; 
+	color: white; 
+}
+
+/*#time_time_1 {
+	color: white;
+	position: absolute;
+	top: 150px;
+	z-index: 1;
+}*/
+
+/* 3 Y-axis values style - should i make them with divs/spans? (reason i use canvas is for easier dynamic move?) */
+#picasso_2d_1 {
+	bottom: 410.5px;
+}
+#picasso_2d_2 {
+	bottom: 821px;
+}
+#picasso_2d_3 {
+	bottom: 1231.5px;
+}
+
+/* 10 X-axis values style */
+#time_1 { 
+	bottom: 1275px; 
+	left: 10.5%;
+}
+#time_2 { 
+	bottom: 1291px; 
+	left: 17.5%;
+}
+#time_3 { 
+	bottom: 1307px; 
+	left: 24.2%;
+}
+#time_4 { 
+	bottom: 1323px; 
+	left: 31.2%;
+}
+#time_5 { 
+	bottom: 1339px; 
+	left: 38.2%;
+}
+#time_6 { 
+	bottom: 1355px; 
+	left: 45.1%;
+}
+#time_7 { 
+	bottom: 1371px; 
+	left: 52%;
+}
+#time_8 {
+	bottom: 1387px; 
+	left: 58.8%;
+}
+#time_9 {
+	bottom: 1403px; 
+	left: 65.7%;
+}
+#time_10 {
+	bottom: 1419px; 
+	left: 72%;
+}
+
+/* Y-scale bar value */
+#scale-Y {
+	font-style:italic; 
+	border: none; 
+	position: relative; 
+	color: white; 
+	bottom: 1248px; 
+	left: 1.3%;
+}
+
+/* X-scale bar value */
+#scale-X {
+	font-style:italic; 
+	border: none; 
+	position: relative; 
+	color: white; 
+	bottom: 1260px; 
+	left: 3.3%;
+}
+
+/* textfields styling width, height, padding */
+.textfield {
+	width:70px;
+	height: 20px;
+}
+
+/* buttons width and height (except animation button - they have longer names) */
+input[type="button"] {
+	/*width: 52px;*/
+	height: 25px;
+	margin-bottom: 2px;
+}
+
+/* width and height to animation buttons */
+input[class="animation"] {
+	width: 85px;
+}
+
+/* set width and height to range slider, so it looks the same on IE, FF, Chrome */
+input[type="range"] {
+	width: 150px;
+	height: 15px;
+}
+
+/* setting line-height to divs (maybe to all elements? ) so pixel centralization looks the same on IE, FF, Chrome */
+div {
+	line-height: 1;
+}
+
+/* now for custom config styling*/
+/* animation button size*/
+input[class="AnimationPush"] {
+	width:85px;
+}
+
+/* button size - must fit for most constant names - they are mainly single chars so this should be enough*/
+input[class="buttonsCustomConfig"] {
+	width:45px;
+	margin-right: 6px;
+}
+
+/*class for textfield in front of buttons so i show/hide them*/
+input[class="txtFieldCustomConfig"] {
+	/*width:67px;*/
+}
+
+.newLinesButtons {
+
+}
+
+/* автоматичен размер спрямо въведеното от потребител */
+.buttonNames {
+	margin-left: 8px;
+	margin-right: 8px;    
+    /*height: 33px;*/
+    line-height: 13px;
+    font-size: 18px;
+    position: relative;
+    float: left;
+}
+
+.buttonNames2 {
+	width:85px;
+	margin-right: 6px;
+}
+
+.buttonNames3 {
+	width:85px;
+	margin-right: 6px;
+}
+
+input[class="colorSelectAfterUpload"] {
+	/*width:67px;*/
+}
+
+input[class="colClass"] {
+	/*margin-left: 8px;*/
+	margin-right: 8px;    
+    /*height: 33px;*/
+    line-height: 13px;
+    font-size: 18px;
+    position: absolute;
+    /*float: left;*/
+}
